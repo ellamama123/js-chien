@@ -1,12 +1,16 @@
 $(document).ready(function() {
-
+    $('#data-table tbody').on('click', 'tr', showDetailsRow());
+    $('#data-table tbody').on('click', 'button.delete', DeleteRow());
+    $('.search-button').on('click', SearchRow());
+    $('.clear').on('click', ClearTable());
+    $('.save').on('click', SaveTable());
     // khai báo bảng và đổ dữ liệu vào bảng
     var table = $('#data-table').DataTable({
         "data": dataJson.users,
         columnDefs: [{
             targets: [3, 6],
             render: function(data, type, row, meta) {
-                return "<input type='text' value='" + data + "'>";
+                return "<input type='text' class='form-control' value='" + data + "'>";
             },
         }, {
             targets: [2],
@@ -79,7 +83,7 @@ $(document).ready(function() {
     }
 
     // hiện thông tin row khi click vào bảng
-    $('#data-table tbody').on('click', 'tr', function() {
+    function showDetailsRow() {
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
         } else {
@@ -93,18 +97,18 @@ $(document).ready(function() {
             $(".office").val(data.office);
             $(".extn").val(data.extn);
         }
-    });
+    };
 
     // xóa thông tin row trong bảng
-    $('#data-table tbody').on('click', 'button.delete', function() {
+    function DeleteRow() {
         table
             .row($(this).parents('tr'))
             .remove()
             .draw();
-    });
+    };
 
     // tìm kiếm trong bảng theo name và id
-    $('.search-button').on('click', function() {
+    function SearchRow() {
         table.search('');
         $('.search-box').each(function() {
             if (this.value.length > 0) {
@@ -113,18 +117,18 @@ $(document).ready(function() {
         });
         table.draw();
 
-    });
+    };
 
     // clear ô search id , name và table 
-    $('.clear').on('click', function() {
+    function ClearTable() {
         $('#searchId').val('');
         $('#searchName').val('');
         table.search('').columns().search('').draw();
-    })
+    };
 
     // lưu dữ liệu và hiển thị ra table
-    $('.save').on('click', function() {
+    function SaveTable() {
         var data = table.rows().data();
         console.log(data);
-    })
+    }
 });
