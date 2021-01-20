@@ -9,5 +9,36 @@
 }
 
 .button {
-    margin: 30px 0px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #342c75;
+    padding: 10px 8px;
+}
+
+button {
+    background: transparent;
+    border: 1px solid white;
+    width: 7%;
+    margin-right: 21px;
+    border-radius: 5px;
+    display: inline-block;
+    height: 59px;
+    vertical-align: text-bottom;
+    outline: 0;
+    outline-style: none;
+    outline-width: 0;
+}
+
+button p {
+    margin: 0px;
+    color: white;
+}
+
+button.btn.btn-danger.delete {
+    width: 100%;
+}
+
+.dataTables_filter {
+    display: none;
 }
