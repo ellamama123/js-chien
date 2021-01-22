@@ -18,10 +18,16 @@ input.form-control.form-control-dark.w-100 {
     background: gray;
     border: 0px;
     color: white;
+    width: 93% !important;
+    display: inline;
 }
 
 a.navbar-brand.col-sm-3.col-md-2.mr-0 {
     flex-basis: 13.1%;
+}
+
+.row.nav-top {
+    width: 100%;
 }
 
 input::placeholder {
@@ -34,6 +40,12 @@ input::placeholder {
     bottom: 0;
     background: #342c75;
     padding: 10px 8px;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.button:hover {
+    opacity: 1;
 }
 
 button {
@@ -61,4 +73,13 @@ button.btn.btn-danger.delete {
 
 .dataTables_filter {
     display: none;
+}
+
+ul.navbar-nav.px-3 {
+    display: inline-block;
+}
+
+footer.bg-primary.text-white.text-center.text-lg-start {
+    height: 200px;
+    margin-top: 14px;
 }

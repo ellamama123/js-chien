@@ -10,7 +10,7 @@ $(document).ready(function() {
         columnDefs: [{
             targets: [3, 6],
             render: function(data, type, row, meta) {
-                return "<input type='text' class=form-control' value='" + data + "'>";
+                return "<input type='text' class='form-control' value='" + data + "'>";
             },
         }, {
             targets: [2],
