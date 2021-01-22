@@ -20,9 +20,12 @@ input.form-control.form-control-dark.w-100 {
     color: white;
 }
 
-::placeholder {
+a.navbar-brand.col-sm-3.col-md-2.mr-0 {
+    flex-basis: 14.3%;
+}
+
+input::placeholder {
     color: white;
-    opacity: 1;
 }
 
 .button {
